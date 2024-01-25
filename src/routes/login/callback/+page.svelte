@@ -1,17 +1,17 @@
 <script>
-	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { getRefreshToken, getToken } from '$lib/core/services/auth.service';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
 		const code = window.location.search.split('=')[1];
 		if (code === 'access_denied') {
 			localStorage.setItem('SpotifyUserAuth', '');
-			goto('login');
+			goto('/');
 		}
-		goto('/dash');
 		localStorage.setItem('SpotifyUserAuth', code.split('&')[0]);
-		console.log('🚀 ~ onMount ~ code:', code);
+		getRefreshToken();
+		goto('/dash');
 	});
 </script>
 
