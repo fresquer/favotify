@@ -1,17 +1,17 @@
 import { browser } from "$app/environment";
 import { goto } from "$app/navigation";
 import { isTokenExpired, storeExpiresTimeSeconds } from "$lib/utils/utils";
+import { PUBLIC_SPOTIFY_AUTH } from '$env/static/public';
 
 const url = 'https://accounts.spotify.com/api/token';
 
 function getOptions(grant_type, code) {
-    const userCode = localStorage.getItem('SpotifyUserAuth');
     return {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             Authorization:
-                'Basic YzI0NTlkMTY5MmVmNGJmNTk2ZWIyODFhYzgwNDczYWM6OGU1YzFiYWEyODIwNGY2NDk5ODQyYTdlNjFmZjRhZWU'
+                'Basic ' + PUBLIC_SPOTIFY_AUTH
         },
         body: new URLSearchParams({
             code,
