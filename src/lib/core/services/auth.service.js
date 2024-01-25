@@ -17,7 +17,7 @@ function getOptions(grant_type, code) {
             code,
             refresh_token: code,
             grant_type: grant_type,
-            redirect_uri: 'http://localhost:5174/login/callback'
+            redirect_uri: 'https://favotify.fresquer.dev/login/callback'
         })
     };
 }

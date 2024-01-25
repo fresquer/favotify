@@ -12,7 +12,7 @@
 		const state = generateRandomStringBase64();
 
 		baseUrl =
-			'https://accounts.spotify.com/authorize?client_id=c2459d1692ef4bf596eb281ac80473ac&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5174%2Flogin%2Fcallback&scope=user-library-read&state=' +
+			'https://accounts.spotify.com/authorize?client_id=c2459d1692ef4bf596eb281ac80473ac&response_type=code&redirect_uri=https://favotify.fresquer.dev/login/callback&scope=user-library-read&state=' +
 			state;
 		console.log(baseUrl);
 	});
